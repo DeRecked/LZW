@@ -1,0 +1,23 @@
+LZW
+
+Description
+
+This program consits of two parts. Part 1 is a fixed-length (12-bit) compression and expansion program. Part 2 is a variable-length (9-16 bits) compression and expansion program.
+
+To Compile
+
+Part 1: "g++ -std=c++11 -o lzw435 lzw435.cpp"
+Part 2: "g++ -std=c++11 -o lzw435M lzw435M.cpp"
+
+Usage
+
+Part 1: ./lzw435 OPERATION FILENAME
+Part 2: ./lzw435M OPERATION FILENAME
+
+OPERATION is either c (to compress) or e (to expand). These flags are not case sensitive.
+FILENAME is the nane (or path/name) of the file you with to perform OPERATION on.
+
+When compressing, the filename will be appended with ".lzw"
+When decompressing (you must decompress a .lzw file), the ".lzw" will be removed and a "2" will be appended
+
+NOTE: It seems that large files (greater than 1 MB or so) seen to take quite a while to compress. lzw435 compressed "bible.txt" in around 10 minutes and lzw435M compressed the same file in about 6 minutes. Decompression in all cases tested seems to work quickly.
